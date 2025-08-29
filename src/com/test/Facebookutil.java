@@ -1,12 +1,14 @@
 package com.test;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Facebook {
-public static void main(String[] args) {
+public class Facebookutil {
+public static void main(String[] args) throws IOException {
 	WebDriver driver= new ChromeDriver();
 	driver.get("https://www.facebook.com/r.php?entry_point=login");
 	WebElement month = driver.findElement(By.id("month"));
