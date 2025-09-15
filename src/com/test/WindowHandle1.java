@@ -3,6 +3,7 @@ package com.test;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,8 +32,10 @@ public class WindowHandle1 {
 		}
 		driver.switchTo().window(parent);
 		System.out.println(driver.getCurrentUrl());
+		JavascriptExecutor js=(JavascriptExecutor) driver;
 		
 		WebElement windowButton=driver.findElement(By.id("windowButton"));
+		js.executeScript("arguments[0].scrollIntoView(true)",windowButton);
 		windowButton.click();
 		Set<String> alltab = driver.getWindowHandles();
 		for(String tab:alltab) {
